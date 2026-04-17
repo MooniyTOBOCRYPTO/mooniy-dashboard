@@ -81,7 +81,6 @@
   .tag-ads { background: rgba(123,97,255,0.15); color: var(--accent2); }
   .tag-listing { background: rgba(200,255,0,0.12); color: var(--accent); }
   .tag-precio { background: rgba(255,201,64,0.15); color: var(--gold); }
-  .tag-stock { background: rgba(56,189,248,0.15); color: var(--blue); }
   .reco-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 4px; }
   .reco-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
   .reco-impact { font-size: 11px; color: var(--green); margin-top: 8px; }
@@ -161,7 +160,6 @@
     </div>
   </header>
 
-  <!-- LOGIN -->
   <div id="login-screen">
     <div class="login-card">
       <div class="login-title">Mooniy <span>Finance</span></div>
@@ -173,7 +171,6 @@
     </div>
   </div>
 
-  <!-- APP -->
   <div id="main-app" style="display:none">
     <div class="nav-tabs">
       <button class="nav-tab active" onclick="showTab('resumen',this)">📊 Resumen</button>
@@ -184,7 +181,6 @@
       <button class="nav-tab" onclick="showTab('fiscal',this)">🧾 Fiscal</button>
     </div>
 
-    <!-- RESUMEN -->
     <div id="tab-resumen" class="section visible">
       <div class="period-bar">
         <div class="section-label">Vista general</div>
@@ -198,7 +194,6 @@
       <div class="reco-list" id="recos-resumen"></div>
     </div>
 
-    <!-- ADS -->
     <div id="tab-ads" class="section">
       <div class="period-bar">
         <div class="section-label">Ads & Performance</div>
@@ -217,7 +212,6 @@
       <div class="reco-list" id="recos-ads"></div>
     </div>
 
-    <!-- VENTAS -->
     <div id="tab-ventas" class="section">
       <div class="section-label">Últimas ventas</div>
       <div class="table-card">
@@ -226,14 +220,12 @@
       </div>
     </div>
 
-    <!-- PROYECCIÓN -->
     <div id="tab-proyeccion" class="section">
       <div class="section-label">Proyección 90 días</div>
       <div class="proyeccion-card" id="proy-card"><div class="loading"><div class="spinner"></div>Calculando...</div></div>
       <div class="reco-list" id="recos-proy"></div>
     </div>
 
-    <!-- TÍTULOS -->
     <div id="tab-titulos" class="section">
       <div class="section-label">Constructor de títulos ML</div>
       <div class="titulo-builder">
@@ -300,67 +292,33 @@
         <div class="keywords-grid" id="kw-grid"></div>
         <button class="btn-copy" onclick="copiarTitulo()">📋 Copiar título</button>
       </div>
-
       <div class="table-card">
         <div class="table-header"><div class="table-title">📚 Reglas de oro para títulos en ML</div></div>
         <div style="padding:20px 24px; display:flex; flex-direction:column; gap:14px;">
-          <div class="reco-item">
-            <div class="reco-icon">1️⃣</div>
-            <div class="reco-content">
-              <div class="reco-title">Máximo 60 caracteres — ni uno más</div>
-              <div class="reco-desc">ML trunca el título en los resultados de búsqueda. Todo lo que pase de 60 chars no existe para el algoritmo ni para el comprador.</div>
-            </div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-icon">2️⃣</div>
-            <div class="reco-content">
-              <div class="reco-title">Keyword principal al inicio</div>
-              <div class="reco-desc">El algoritmo de ML pondera más las primeras palabras. "Pack X5 Remeras Mujer" gana siempre a "Remeras Básicas Pack de 5 para Mujer".</div>
-            </div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-icon">3️⃣</div>
-            <div class="reco-content">
-              <div class="reco-title">Sin artículos, preposiciones ni puntuación</div>
-              <div class="reco-desc">Eliminá "de", "para", "con", comas y guiones. Cada caracter debe ser una keyword o un diferenciador. "Remeras Mujer Modal" no "Remeras para Mujer de Modal".</div>
-            </div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-icon">4️⃣</div>
-            <div class="reco-content">
-              <div class="reco-title">Mantené "Modal Soft" — es tu diferenciador</div>
-              <div class="reco-desc">WACKY y Mojo usan "100% Algodón". Modal Soft es tu terreno exclusivo. Capturás búsquedas diferentes y te diferenciás visualmente en resultados.</div>
-            </div>
-          </div>
-          <div class="reco-item">
-            <div class="reco-icon">5️⃣</div>
-            <div class="reco-content">
-              <div class="reco-title">Nunca pongas precio, marca ni garantías en el título</div>
-              <div class="reco-desc">ML penaliza estos títulos y pueden suspenderte el listing. La marca va en el campo "Marca", no en el título.</div>
-            </div>
-          </div>
+          <div class="reco-item"><div class="reco-icon">1️⃣</div><div class="reco-content"><div class="reco-title">Máximo 60 caracteres</div><div class="reco-desc">ML trunca el título en los resultados. Todo lo que pase de 60 chars no existe para el algoritmo ni para el comprador.</div></div></div>
+          <div class="reco-item"><div class="reco-icon">2️⃣</div><div class="reco-content"><div class="reco-title">Keyword principal al inicio</div><div class="reco-desc">El algoritmo pondera más las primeras palabras. "Pack X5 Remeras Mujer" gana a "Remeras Básicas Pack de 5 para Mujer".</div></div></div>
+          <div class="reco-item"><div class="reco-icon">3️⃣</div><div class="reco-content"><div class="reco-title">Sin artículos ni preposiciones</div><div class="reco-desc">Eliminá "de", "para", "con". "Remeras Mujer Modal" no "Remeras para Mujer de Modal".</div></div></div>
+          <div class="reco-item"><div class="reco-icon">4️⃣</div><div class="reco-content"><div class="reco-title">Mantené "Modal Soft" — es tu diferenciador</div><div class="reco-desc">WACKY y Mojo usan "100% Algodón". Modal Soft es tu terreno exclusivo.</div></div></div>
+          <div class="reco-item"><div class="reco-icon">5️⃣</div><div class="reco-content"><div class="reco-title">Nunca pongas precio ni marca en el título</div><div class="reco-desc">ML penaliza estos títulos. La marca va en el campo "Marca".</div></div></div>
         </div>
       </div>
     </div>
 
-    <!-- FISCAL -->
     <div id="tab-fiscal" class="section">
       <div class="section-label">Resumen fiscal — Responsable Inscripto</div>
       <div class="tax-grid" id="tax-grid"><div class="loading"><div class="spinner"></div>Calculando...</div></div>
     </div>
-
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 const BACKEND = 'https://mooniy-finance-backend-production.up.railway.app';
 const ML_CLIENT_ID = '3008908008934093';
 const ML_REDIRECT_URI = 'https://mooniytobocrypto.github.io/mooniy-dashboard';
-const ML_AUTH_URL = `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=${ML_CLIENT_ID}&redirect_uri=${encodeURIComponent(ML_REDIRECT_URI)}`
-  
+const ML_AUTH_URL = `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=${ML_CLIENT_ID}&redirect_uri=${encodeURIComponent(ML_REDIRECT_URI)}`;
+
 let accessToken = localStorage.getItem('ml_token');
 let userId = localStorage.getItem('ml_user_id');
 let periodo = '7';
@@ -368,6 +326,24 @@ let ordenesCache = null;
 
 window.onload = async () => {
   const params = new URLSearchParams(window.location.search);
+
+  // Recibir token desde Railway redirect
+  const token = params.get('token');
+  const uid = params.get('user_id');
+  if (token && uid) {
+    accessToken = token;
+    userId = uid;
+    localStorage.setItem('ml_token', token);
+    localStorage.setItem('ml_user_id', uid);
+    window.history.replaceState({}, '', window.location.pathname);
+    mostrarToast('¡Conectado!', 'success');
+    buildTitulo();
+    renderKeywords();
+    iniciarApp();
+    return;
+  }
+
+  // Recibir code desde ML (fallback)
   const code = params.get('code');
   if (code) {
     mostrarToast('Conectando...', 'info');
@@ -381,12 +357,26 @@ window.onload = async () => {
         localStorage.setItem('ml_user_id', userId);
         window.history.replaceState({}, '', window.location.pathname);
         mostrarToast('¡Conectado!', 'success');
+        buildTitulo();
+        renderKeywords();
         iniciarApp();
-      } else { mostrarToast('Error al obtener token', 'error'); }
-    } catch(e) { mostrarToast('Error de conexión', 'error'); }
-  } else if (accessToken) {
-    iniciarApp();
+      } else {
+        mostrarToast('Error al obtener token', 'error');
+      }
+    } catch(e) {
+      mostrarToast('Error de conexión', 'error');
+    }
+    return;
   }
+
+  // Token guardado
+  if (accessToken && userId) {
+    buildTitulo();
+    renderKeywords();
+    iniciarApp();
+    return;
+  }
+
   buildTitulo();
   renderKeywords();
 };
@@ -448,14 +438,12 @@ function cargarKPIs() {
   const neto = totalVentas - comisiones;
   const ticket = cantVentas > 0 ? totalVentas / cantVentas : 0;
   const diario = parseInt(periodo) > 0 ? totalVentas / parseInt(periodo) : 0;
-
   grid.innerHTML = `
     <div class="kpi-card"><div class="kpi-icon">💰</div><div class="kpi-label">Ventas brutas</div><div class="kpi-value green">${formatPeso(totalVentas)}</div><div class="kpi-sub">${cantVentas} órdenes · ${periodo}D</div></div>
     <div class="kpi-card"><div class="kpi-icon">📦</div><div class="kpi-label">Neto (sin ads/imp)</div><div class="kpi-value">${formatPeso(neto)}</div><div class="kpi-sub">Comisión ML: ${formatPeso(comisiones)}</div></div>
     <div class="kpi-card"><div class="kpi-icon">🎯</div><div class="kpi-label">Ticket promedio</div><div class="kpi-value gold">${formatPeso(ticket)}</div><div class="kpi-sub">Por orden</div></div>
     <div class="kpi-card"><div class="kpi-icon">📅</div><div class="kpi-label">Promedio diario</div><div class="kpi-value blue">${formatPeso(diario)}</div><div class="kpi-sub">Últimos ${periodo} días</div></div>
   `;
-
   document.getElementById('recos-resumen').innerHTML = generarRecos(totalVentas, cantVentas, comisiones, ticket, diario);
 }
 
@@ -463,12 +451,9 @@ async function cargarAds() {
   const adsKpis = document.getElementById('ads-kpis');
   const campanas = document.getElementById('campanas-container');
   try {
-    const [adsData] = await Promise.all([
-      mlFetch(`https://api.mercadolibre.com/advertising/advertisers/${userId}/campaigns?status=active`)
-    ]);
+    const adsData = await mlFetch(`https://api.mercadolibre.com/advertising/advertisers/${userId}/campaigns?status=active`);
     const ordenes = ordenesCache || [];
     const totalVentas = ordenes.reduce((s,o) => s + o.total_amount, 0);
-
     let gastoAds = 0, ventasAds = 0;
     if (adsData.data?.length) {
       for (const camp of adsData.data.slice(0,5)) {
@@ -479,55 +464,22 @@ async function cargarAds() {
         } catch(e) {}
       }
     }
-
     const estimado = gastoAds === 0;
     if (estimado) { gastoAds = totalVentas * 0.08; ventasAds = totalVentas * 0.35; }
-
     const acos = ventasAds > 0 ? (gastoAds / ventasAds) * 100 : 0;
     const roas = gastoAds > 0 ? ventasAds / gastoAds : 0;
     const tacos = totalVentas > 0 ? (gastoAds / totalVentas) * 100 : 0;
-
-    const acosColor = acos < 15 ? 'good' : acos < 25 ? 'warn' : 'bad';
-    const roasColor = roas > 6 ? 'green' : roas > 3 ? 'gold' : 'red';
-    const tacosColor = tacos < 10 ? 'good' : tacos < 20 ? 'warn' : 'bad';
-
     adsKpis.innerHTML = `
-      <div class="ads-card highlight">
-        <div class="kpi-label">ROAS</div>
-        <div class="kpi-value ${roasColor}">${roas.toFixed(1)}x</div>
-        <div class="kpi-sub">Por cada $1 en ads → $${roas.toFixed(1)}</div>
-        <div class="kpi-sub" style="margin-top:6px">${roas >= 5 ? '✅ Excelente' : roas >= 3 ? '⚠️ Mejorable' : '🔴 Bajo — revisar listing'}</div>
-      </div>
-      <div class="ads-card">
-        <div class="kpi-label">ACOS</div>
-        <div class="kpi-value ${acos < 15 ? 'green' : acos < 25 ? 'gold' : 'red'}">${acos.toFixed(1)}%</div>
-        <div class="kpi-sub">% ventas ads gastado en ads</div>
-        <div class="meter-bar"><div class="meter-fill ${acosColor}" style="width:${Math.min(acos/40*100,100)}%"></div></div>
-        <div class="kpi-sub" style="margin-top:6px">Objetivo: &lt;15%</div>
-      </div>
-      <div class="ads-card">
-        <div class="kpi-label">TACOS</div>
-        <div class="kpi-value ${tacos < 10 ? 'green' : tacos < 20 ? 'gold' : 'red'}">${tacos.toFixed(1)}%</div>
-        <div class="kpi-sub">% ventas totales en ads</div>
-        <div class="meter-bar"><div class="meter-fill ${tacosColor}" style="width:${Math.min(tacos/25*100,100)}%"></div></div>
-        <div class="kpi-sub" style="margin-top:6px">Objetivo: &lt;10%</div>
-      </div>
-      <div class="ads-card">
-        <div class="kpi-label">Gasto en ads</div>
-        <div class="kpi-value red">${formatPeso(gastoAds)}</div>
-        <div class="kpi-sub">Ventas por ads: ${formatPeso(ventasAds)}</div>
-        <div class="kpi-sub" style="margin-top:6px; font-size:10px; color:var(--muted)">${estimado ? '* Datos estimados' : '✅ Datos reales'}</div>
-      </div>
+      <div class="ads-card highlight"><div class="kpi-label">ROAS</div><div class="kpi-value ${roas>6?'green':roas>3?'gold':'red'}">${roas.toFixed(1)}x</div><div class="kpi-sub">Por cada $1 en ads → $${roas.toFixed(1)}</div><div class="kpi-sub" style="margin-top:6px">${roas>=5?'✅ Excelente':roas>=3?'⚠️ Mejorable':'🔴 Bajo — revisar listing'}</div></div>
+      <div class="ads-card"><div class="kpi-label">ACOS</div><div class="kpi-value ${acos<15?'green':acos<25?'gold':'red'}">${acos.toFixed(1)}%</div><div class="kpi-sub">% ventas ads gastado en ads</div><div class="meter-bar"><div class="meter-fill ${acos<15?'good':acos<25?'warn':'bad'}" style="width:${Math.min(acos/40*100,100)}%"></div></div><div class="kpi-sub" style="margin-top:6px">Objetivo: &lt;15%</div></div>
+      <div class="ads-card"><div class="kpi-label">TACOS</div><div class="kpi-value ${tacos<10?'green':tacos<20?'gold':'red'}">${tacos.toFixed(1)}%</div><div class="kpi-sub">% ventas totales en ads</div><div class="meter-bar"><div class="meter-fill ${tacos<10?'good':tacos<20?'warn':'bad'}" style="width:${Math.min(tacos/25*100,100)}%"></div></div><div class="kpi-sub" style="margin-top:6px">Objetivo: &lt;10%</div></div>
+      <div class="ads-card"><div class="kpi-label">Gasto en ads</div><div class="kpi-value red">${formatPeso(gastoAds)}</div><div class="kpi-sub">Ventas por ads: ${formatPeso(ventasAds)}</div><div class="kpi-sub" style="margin-top:6px;font-size:10px;color:var(--muted)">${estimado?'* Datos estimados':'✅ Datos reales'}</div></div>
     `;
-
     if (adsData.data?.length) {
-      campanas.innerHTML = `<table><thead><tr><th>Campaña</th><th>Estado</th><th>Tipo</th></tr></thead><tbody>
-        ${adsData.data.map(c => `<tr><td>${c.name||'—'}</td><td><span class="badge badge-green">Activa</span></td><td style="color:var(--muted)">${c.type||'—'}</td></tr>`).join('')}
-      </tbody></table>`;
+      campanas.innerHTML = `<table><thead><tr><th>Campaña</th><th>Estado</th><th>Tipo</th></tr></thead><tbody>${adsData.data.map(c=>`<tr><td>${c.name||'—'}</td><td><span class="badge badge-green">Activa</span></td><td style="color:var(--muted)">${c.type||'—'}</td></tr>`).join('')}</tbody></table>`;
     } else {
-      campanas.innerHTML = `<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Sin campañas activas.<br>Verificá que Mercado Ads esté habilitado.</div></div>`;
+      campanas.innerHTML = `<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Sin campañas activas.</div></div>`;
     }
-
     document.getElementById('recos-ads').innerHTML = generarRecosAds(acos, roas, tacos);
   } catch(e) {
     adsKpis.innerHTML = `<div class="empty"><div class="empty-icon">⚠️</div><div class="empty-text">Error al cargar Ads.</div></div>`;
@@ -537,10 +489,7 @@ async function cargarAds() {
 function cargarVentas() {
   const container = document.getElementById('ventas-container');
   const ordenes = ordenesCache || [];
-  if (!ordenes.length) {
-    container.innerHTML = '<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Sin ventas en este período.</div></div>';
-    return;
-  }
+  if (!ordenes.length) { container.innerHTML = '<div class="empty"><div class="empty-icon">📭</div><div class="empty-text">Sin ventas en este período.</div></div>'; return; }
   const rows = ordenes.slice(0,30).map(o => {
     const fecha = new Date(o.date_created).toLocaleDateString('es-AR',{day:'2-digit',month:'2-digit'});
     const prod = o.order_items?.[0]?.item?.title || '—';
@@ -559,18 +508,13 @@ function cargarProyeccion() {
   const cantVentas = ordenes.length;
   const dias = parseInt(periodo);
   const diario = dias > 0 ? totalVentas / dias : 0;
-  const diarioUnidades = dias > 0 ? cantVentas / dias : 0;
-
   const conservador = diario * 90 * 0.9;
   const base = diario * 90 * 1.15;
   const optimista = diario * 90 * 1.45;
-  const unidadesBase = Math.round(diarioUnidades * 90 * 1.15);
-
-  const semanas = 13;
-  const labels = Array.from({length:semanas},(_,i)=>`S${i+1}`);
-  const dataBase = Array.from({length:semanas},(_,i)=>Math.round(diario*7*(1+i*0.02)));
-  const dataOpt = Array.from({length:semanas},(_,i)=>Math.round(diario*7*(1+i*0.04)));
-
+  const unidadesBase = Math.round((dias>0?cantVentas/dias:0)*90*1.15);
+  const labels = Array.from({length:13},(_,i)=>`S${i+1}`);
+  const dataBase = Array.from({length:13},(_,i)=>Math.round(diario*7*(1+i*0.02)));
+  const dataOpt = Array.from({length:13},(_,i)=>Math.round(diario*7*(1+i*0.04)));
   card.innerHTML = `
     <div class="proy-title">📈 Proyección 90 días — basada en últimos ${periodo}D</div>
     <div class="proy-grid">
@@ -580,35 +524,23 @@ function cargarProyeccion() {
     </div>
     <div class="section-label" style="margin-bottom:12px">Tendencia semanal proyectada</div>
     <div class="chart-wrap"><canvas id="proy-chart"></canvas></div>
-    <div style="margin-top:16px; font-size:11px; color:var(--muted); line-height:1.8">
-      📌 Realista: +15% por mejora de conversión y reviews acumuladas.<br>
+    <div style="margin-top:16px;font-size:11px;color:var(--muted);line-height:1.8">
+      📌 Realista: +15% por mejora de conversión y reviews.<br>
       📌 Optimista: +45% con optimización de ads + títulos + precio.<br>
-      📌 Para superar a WACKY y Mojo necesitás TACOS &lt;10% y 50+ reviews.
+      📌 Para superar a WACKY y Mojo: TACOS &lt;10% y 50+ reviews.
     </div>
   `;
-
   setTimeout(() => {
     const ctx = document.getElementById('proy-chart').getContext('2d');
     new Chart(ctx, {
       type: 'line',
-      data: {
-        labels,
-        datasets: [
-          { label: 'Realista', data: dataBase, borderColor: '#c8ff00', backgroundColor: 'rgba(200,255,0,0.05)', tension: 0.4, fill: true, pointRadius: 3 },
-          { label: 'Optimista', data: dataOpt, borderColor: '#7b61ff', backgroundColor: 'rgba(123,97,255,0.05)', tension: 0.4, fill: true, pointRadius: 3, borderDash: [4,4] }
-        ]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { labels: { color: '#5a5a7a', font: { family: 'DM Mono', size: 11 } } } },
-        scales: {
-          x: { ticks: { color: '#5a5a7a', font: { size: 10 } }, grid: { color: '#252538' } },
-          y: { ticks: { color: '#5a5a7a', font: { size: 10 }, callback: v => '$' + Math.round(v/1000) + 'k' }, grid: { color: '#252538' } }
-        }
-      }
+      data: { labels, datasets: [
+        { label:'Realista', data:dataBase, borderColor:'#c8ff00', backgroundColor:'rgba(200,255,0,0.05)', tension:0.4, fill:true, pointRadius:3 },
+        { label:'Optimista', data:dataOpt, borderColor:'#7b61ff', backgroundColor:'rgba(123,97,255,0.05)', tension:0.4, fill:true, pointRadius:3, borderDash:[4,4] }
+      ]},
+      options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{labels:{color:'#5a5a7a',font:{family:'DM Mono',size:11}}}}, scales:{x:{ticks:{color:'#5a5a7a',font:{size:10}},grid:{color:'#252538'}},y:{ticks:{color:'#5a5a7a',font:{size:10},callback:v=>'$'+Math.round(v/1000)+'k'},grid:{color:'#252538'}}}}
     });
   }, 100);
-
   document.getElementById('recos-proy').innerHTML = generarRecosProy();
 }
 
@@ -624,24 +556,20 @@ function cargarFiscal() {
   const comisiones = ordenes.reduce((s,o) => s + (o.payments?.[0]?.marketplace_fee||0), 0);
   const gananciaEst = (totalVentas - comisiones) * 0.3 * 0.25;
   const totalCarga = saldoIVA + iibb + gananciaEst;
-
   grid.innerHTML = `
-    <div class="tax-card">
-      <div class="tax-card-title">🧾 IVA — Responsable Inscripto</div>
+    <div class="tax-card"><div class="tax-card-title">🧾 IVA — Responsable Inscripto</div>
       <div class="tax-row"><span class="tax-row-label">Ventas sin IVA</span><span>${formatPeso(sinIVA)}</span></div>
       <div class="tax-row"><span class="tax-row-label">Débito fiscal (21%)</span><span class="red">${formatPeso(debito)}</span></div>
       <div class="tax-row"><span class="tax-row-label">Crédito fiscal est.</span><span class="green">-${formatPeso(credito)}</span></div>
-      <div class="tax-row"><span class="tax-row-label" style="font-weight:600">Saldo IVA a pagar</span><span style="color:var(--gold);font-family:'Syne',sans-serif;font-weight:700">${formatPeso(saldoIVA)}</span></div>
+      <div class="tax-row"><span class="tax-row-label" style="font-weight:600">Saldo IVA</span><span style="color:var(--gold);font-family:'Syne',sans-serif;font-weight:700">${formatPeso(saldoIVA)}</span></div>
     </div>
-    <div class="tax-card">
-      <div class="tax-card-title">📊 Otros impuestos</div>
+    <div class="tax-card"><div class="tax-card-title">📊 Otros impuestos</div>
       <div class="tax-row"><span class="tax-row-label">IIBB CABA (3%)</span><span class="red">${formatPeso(iibb)}</span></div>
-      <div class="tax-row"><span class="tax-row-label">Ganancias est. (25%)</span><span class="red">${formatPeso(gananciaEst)}</span></div>
+      <div class="tax-row"><span class="tax-row-label">Ganancias est.</span><span class="red">${formatPeso(gananciaEst)}</span></div>
       <div class="tax-row"><span class="tax-row-label">Comisión ML</span><span class="red">${formatPeso(comisiones)}</span></div>
       <div class="tax-row"><span class="tax-row-label" style="font-weight:600">Total carga fiscal</span><span style="color:var(--gold);font-family:'Syne',sans-serif;font-weight:700">${formatPeso(totalCarga)}</span></div>
     </div>
-    <div class="tax-card">
-      <div class="tax-card-title">💵 Neto real estimado</div>
+    <div class="tax-card"><div class="tax-card-title">💵 Neto real estimado</div>
       <div class="tax-row"><span class="tax-row-label">Ventas brutas</span><span class="green">${formatPeso(totalVentas)}</span></div>
       <div class="tax-row"><span class="tax-row-label">Comisión ML</span><span class="red">-${formatPeso(comisiones)}</span></div>
       <div class="tax-row"><span class="tax-row-label">Carga fiscal</span><span class="red">-${formatPeso(totalCarga)}</span></div>
@@ -650,7 +578,6 @@ function cargarFiscal() {
   `;
 }
 
-// TÍTULO BUILDER
 const KEYWORDS_ML = ['Remeras Mujer','Remera Básica','Pack Remeras','Modal Soft','Manga Corta','Ropa Mujer','Remera Lisa','Casual','Algodón','Básica','Verano','Outfit','Talle Especial','Colores','Premium','Cómoda','Suave','Diaria'];
 let kwSeleccionadas = new Set();
 
@@ -690,33 +617,31 @@ function buildTitulo() {
 }
 
 function copiarTitulo() {
-  const t = document.getElementById('titulo-preview').textContent;
-  navigator.clipboard.writeText(t).then(() => mostrarToast('¡Título copiado!', 'success'));
+  navigator.clipboard.writeText(document.getElementById('titulo-preview').textContent).then(() => mostrarToast('¡Título copiado!', 'success'));
 }
 
-// RECOS
 function generarRecos(ventas, cant, comisiones, ticket, diario) {
   const items = [];
-  if (ticket < 5000) items.push({icon:'💡',tag:'tag-precio',label:'Precio',title:'Aumentá el ticket promedio con packs más grandes',desc:`Ticket promedio: ${formatPeso(ticket)}. Un Pack X10 o combo puede llevarlo a $8.000-$10.000.`,impact:'Potencial +30% en ingresos'});
-  if (cant < 5) items.push({icon:'📸',tag:'tag-listing',label:'Listing',title:'Optimizá las fotos — son el primer filtro de compra',desc:'Menos de 5 ventas en el período casi siempre es problema de conversión. Foto 1: pack completo. Foto 2: tela de cerca.',impact:'+20-40% en tasa de conversión'});
-  items.push({icon:'⭐',tag:'tag-listing',label:'Reviews',title:'Reviews: tu activo más valioso contra WACKY y Mojo',desc:'Insert en el paquete + mensaje post-entrega = review en 72hs. Cada 10 reviews nuevas sube el CTR orgánico.',impact:'+15% CTR con cada 10 reviews'});
-  return items.map(r => `<div class="reco-item"><div class="reco-icon">${r.icon}</div><div class="reco-content"><div class="reco-tag ${r.tag}">${r.label}</div><div class="reco-title">${r.title}</div><div class="reco-desc">${r.desc}</div><div class="reco-impact">↑ ${r.impact}</div></div></div>`).join('');
+  if (ticket < 5000) items.push({icon:'💡',tag:'tag-precio',label:'Precio',title:'Aumentá el ticket con packs más grandes',desc:`Ticket: ${formatPeso(ticket)}. Un Pack X10 puede llevarlo a $8.000-$10.000.`,impact:'Potencial +30% en ingresos'});
+  if (cant < 5) items.push({icon:'📸',tag:'tag-listing',label:'Listing',title:'Optimizá las fotos',desc:'Menos de 5 ventas = problema de conversión. Foto 1: pack completo. Foto 2: tela de cerca.',impact:'+20-40% en tasa de conversión'});
+  items.push({icon:'⭐',tag:'tag-listing',label:'Reviews',title:'Reviews: tu activo más valioso contra WACKY y Mojo',desc:'Insert en el paquete + mensaje post-entrega = review en 72hs.',impact:'+15% CTR con cada 10 reviews'});
+  return items.map(r=>`<div class="reco-item"><div class="reco-icon">${r.icon}</div><div class="reco-content"><div class="reco-tag ${r.tag}">${r.label}</div><div class="reco-title">${r.title}</div><div class="reco-desc">${r.desc}</div><div class="reco-impact">↑ ${r.impact}</div></div></div>`).join('');
 }
 
 function generarRecosAds(acos, roas, tacos) {
   const items = [];
-  if (acos > 20) items.push({icon:'✂️',tag:'tag-ads',label:'Ads',title:'ACOS alto: pausá keywords que no convierten',desc:`ACOS ${acos.toFixed(1)}% es alto. Revisá el reporte de búsquedas y pausá las que tienen clics pero cero conversiones.`,impact:'Bajar ACOS a <15% mejora el margen neto'});
-  if (roas < 4) items.push({icon:'🎯',tag:'tag-ads',label:'Ads',title:'ROAS bajo: mejorá el listing antes de escalar ads',desc:'ROAS menor a 4x significa que el listing no convierte. No escales presupuesto hasta optimizar la publicación.',impact:'Objetivo mínimo: ROAS 5x'});
-  if (tacos > 12) items.push({icon:'📉',tag:'tag-ads',label:'Ads',title:'TACOS elevado: necesitás más ventas orgánicas',desc:`TACOS ${tacos.toFixed(1)}%: ads → visibilidad → reviews → ranking orgánico → reducir ads. Ese es el ciclo.`,impact:'Objetivo 90 días: TACOS <10%'});
-  items.push({icon:'🕐',tag:'tag-ads',label:'Ads',title:'Programá ads en horarios de mayor conversión',desc:'Picos de compra en ML Argentina: 21-23hs y 12-14hs. Concentrá el presupuesto ahí y bajalo en madrugada.',impact:'+15-25% en eficiencia del presupuesto'});
-  return items.map(r => `<div class="reco-item"><div class="reco-icon">${r.icon}</div><div class="reco-content"><div class="reco-tag ${r.tag}">${r.label}</div><div class="reco-title">${r.title}</div><div class="reco-desc">${r.desc}</div><div class="reco-impact">↑ ${r.impact}</div></div></div>`).join('');
+  if (acos > 20) items.push({icon:'✂️',tag:'tag-ads',label:'Ads',title:'ACOS alto: pausá keywords que no convierten',desc:`ACOS ${acos.toFixed(1)}%: pausá las que tienen clics pero cero conversiones.`,impact:'Bajar ACOS a <15%'});
+  if (roas < 4) items.push({icon:'🎯',tag:'tag-ads',label:'Ads',title:'ROAS bajo: mejorá el listing antes de escalar',desc:'No escales presupuesto hasta optimizar la publicación.',impact:'Objetivo: ROAS 5x'});
+  if (tacos > 12) items.push({icon:'📉',tag:'tag-ads',label:'Ads',title:'TACOS elevado: más ventas orgánicas',desc:`TACOS ${tacos.toFixed(1)}%: ads → reviews → ranking orgánico → reducir ads.`,impact:'Objetivo: TACOS <10%'});
+  items.push({icon:'🕐',tag:'tag-ads',label:'Ads',title:'Programá ads en horarios pico',desc:'Picos en ML Argentina: 21-23hs y 12-14hs.',impact:'+15-25% en eficiencia'});
+  return items.map(r=>`<div class="reco-item"><div class="reco-icon">${r.icon}</div><div class="reco-content"><div class="reco-tag ${r.tag}">${r.label}</div><div class="reco-title">${r.title}</div><div class="reco-desc">${r.desc}</div><div class="reco-impact">↑ ${r.impact}</div></div></div>`).join('');
 }
 
 function generarRecosProy() {
   return `
-    <div class="reco-item"><div class="reco-icon">🚀</div><div class="reco-content"><div class="reco-tag tag-listing">Fase 1 · 0-30D</div><div class="reco-title">Conversión — arreglá el listing</div><div class="reco-desc">Optimizá título con keywords de alto volumen, completá las 10 fotos, mejorá la descripción con diferenciación de Modal Soft. Sin esto, más ads = más gasto sin retorno.</div><div class="reco-impact">↑ Meta: duplicar tasa de conversión</div></div></div>
-    <div class="reco-item"><div class="reco-icon">⭐</div><div class="reco-content"><div class="reco-tag tag-listing">Fase 2 · 30-60D</div><div class="reco-title">Reviews — acumulá reputación</div><div class="reco-desc">Con el listing optimizado, enfocate en reviews. Objetivo: 50 reviews con 4.8+. Esto es exactamente lo que WACKY y Mojo tienen y vos estás construyendo.</div><div class="reco-impact">↑ Meta: 50 reviews → +30% CTR orgánico</div></div></div>
-    <div class="reco-item"><div class="reco-icon">📈</div><div class="reco-content"><div class="reco-tag tag-ads">Fase 3 · 60-90D</div><div class="reco-title">Escala — subí ads con TACOS controlado</div><div class="reco-desc">Con listing sólido y reviews acumuladas, el algoritmo te da visibilidad orgánica. Ahí escalás ads apuntando a keywords de competidores y superás a WACKY y Mojo en volumen.</div><div class="reco-impact">↑ Meta: superar a WACKY y Mojo en ventas diarias</div></div></div>
+    <div class="reco-item"><div class="reco-icon">🚀</div><div class="reco-content"><div class="reco-tag tag-listing">Fase 1 · 0-30D</div><div class="reco-title">Conversión — arreglá el listing</div><div class="reco-desc">Optimizá título, completá las 10 fotos, diferenciá con Modal Soft.</div><div class="reco-impact">↑ Meta: duplicar tasa de conversión</div></div></div>
+    <div class="reco-item"><div class="reco-icon">⭐</div><div class="reco-content"><div class="reco-tag tag-listing">Fase 2 · 30-60D</div><div class="reco-title">Reviews — acumulá reputación</div><div class="reco-desc">Objetivo: 50 reviews con 4.8+. Esto es lo que WACKY y Mojo tienen.</div><div class="reco-impact">↑ Meta: 50 reviews → +30% CTR orgánico</div></div></div>
+    <div class="reco-item"><div class="reco-icon">📈</div><div class="reco-content"><div class="reco-tag tag-ads">Fase 3 · 60-90D</div><div class="reco-title">Escala — subí ads con TACOS controlado</div><div class="reco-desc">Con listing y reviews, escalás ads y superás a WACKY y Mojo.</div><div class="reco-impact">↑ Meta: superar a WACKY y Mojo en ventas diarias</div></div></div>
   `;
 }
 
