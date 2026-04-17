@@ -357,10 +357,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
 const BACKEND = 'https://mooniy-finance-backend-production.up.railway.app';
-const ML_CLIENT_ID = '2902427822558811';
-const ML_REDIRECT_URI = `${BACKEND}/callback`;
-const ML_AUTH_URL = `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=${ML_CLIENT_ID}&redirect_uri=${encodeURIComponent(ML_REDIRECT_URI)}`;
-
+const ML_CLIENT_ID = '3008908008934093';
+const ML_REDIRECT_URI = 'https://mooniytobocrypto.github.io/mooniy-dashboard';
+const ML_AUTH_URL = `https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=${ML_CLIENT_ID}&redirect_uri=${encodeURIComponent(ML_REDIRECT_URI)}`
+  
 let accessToken = localStorage.getItem('ml_token');
 let userId = localStorage.getItem('ml_user_id');
 let periodo = '7';
