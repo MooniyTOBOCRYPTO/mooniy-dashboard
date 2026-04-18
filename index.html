@@ -416,7 +416,10 @@ async function cargarTodo() {
 }
 
 async function mlFetch(url) {
-  const res = await fetch(url, { headers: { 'Authorization': `Bearer ${accessToken}` } });
+  const mlPath = url.replace('https://api.mercadolibre.com/', '');
+  const query = mlPath.includes('?') ? '' : '';
+  const proxyUrl = BACKEND + '/api/' + mlPath;
+  const res = await fetch(proxyUrl, { headers: { 'Authorization': `Bearer ${accessToken}` } });
   if (res.status === 401) { localStorage.removeItem('ml_token'); localStorage.removeItem('ml_user_id'); window.location.reload(); }
   return res.json();
 }
