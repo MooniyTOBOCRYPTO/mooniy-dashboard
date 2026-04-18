@@ -427,7 +427,11 @@ async function mlFetch(url) {
 async function cargarOrdenes() {
   if (ordenesCache) return;
   try {
-    const data = await mlFetch(`https://api.mercadolibre.com/orders/search?seller=${userId}&order.date_created.from=${getFechaDesde()}&order.status=paid&limit=50`);
+    const desde = getFechaDesde();
+    const res = await fetch(`${BACKEND}/ordenes?seller=${userId}&desde=${encodeURIComponent(desde)}`, {
+      headers: { 'Authorization': `Bearer ${accessToken}` }
+    });
+    const data = await res.json();
     ordenesCache = data.results || [];
   } catch(e) { ordenesCache = []; }
 }
@@ -649,8 +653,12 @@ function generarRecosProy() {
 }
 
 function getFechaDesde() {
-  const d = new Date(); d.setDate(d.getDate() - parseInt(periodo));
-  return d.toISOString().split('T')[0] + 'T00:00:00.000-03:00';
+  const d = new Date();
+  d.setDate(d.getDate() - parseInt(periodo));
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const day = String(d.getDate()).padStart(2,'0');
+  return y + '-' + m + '-' + day + 'T00:00:00.000-03:00';
 }
 
 function getFechaDesdeISO() {
